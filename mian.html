@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modern Product Showcase</title>
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      color: white;
+      background: linear-gradient(135deg, #000000, #1a1a1a, #ff7a00);
+      background-size: 300% 300%;
+      animation: gradientMove 12s ease infinite;
+    }
+
+    @keyframes gradientMove {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    header {
+      text-align: center;
+      padding: 80px 20px;
+    }
+
+    header h1 {
+      font-size: 3rem;
+      background: linear-gradient(90deg, #ffffff, #ffffff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    header p {
+      margin-top: 10px;
+      color: #ccc;
+    }
+
+    .section {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 80px 10%;
+      gap: 40px;
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 0.8s ease;
+    }
+
+    .section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .section:nth-child(even) {
+      flex-direction: row-reverse;
+    }
+
+    .text {
+      flex: 1;
+    }
+
+    .text h2 {
+      font-size: 2rem;
+      margin-bottom: 15px;
+      color: #ff9a3c;
+    }
+
+    .text p {
+      color: #ddd;
+      margin-bottom: 20px;
+      line-height: 1.6;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 18px;
+      background: linear-gradient(90deg, #ff7a00, #ffb347);
+      color: black;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+
+    .btn:hover {
+      transform: scale(1.05);
+      opacity: 0.9;
+    }
+
+    .image {
+      flex: 1;
+      height: 220px;
+      border-radius: 20px;
+      background: linear-gradient(145deg, #222, #111);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #666;
+      font-size: 0.9rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 40px;
+      color: #aaa;
+      font-size: 0.9rem;
+    }
+
+    .bottom-text {
+      text-align: center;
+      
+    }
+
+    @media (max-width: 800px) {
+      .section {
+        flex-direction: column !important;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Development Portfolio</h1>
+  <p>If you want to reach out, contact me on GitHub, Im always happy for new projects!</p>
+
+
+
+
+</header>
+
+<section class="section">
+  <div class="text">
+    <h2>Weather Alerts</h2>
+    <p>Terminal tool for live weather warnings (UK & USA)</p>
+    <a href="#" class="btn" target="_blank">Github Link</a>
+  </div>
+  <div class="image">IMAGE NEEDED</div>
+</section>
+
+<section class="section">
+  <div class="text">
+    <h2>Sunset Tracker</h2>
+    <p>A simple terminal tool to show sunset data for a chosen location.</p>
+    <a href="#" class="btn" target="_blank">Github Link</a>
+  </div>
+  <div class="image">IMAGE NEEDED</div>
+</section>
+
+<section class="section">
+  <div class="text">
+    <h2>Flight Data</h2>
+    <p>A simple terminal tool to fetch and display flight data. Works on Linux, macOS, and Windows.
+
+Get live flight information right from your terminal with an easy-to-use CLI.</p>
+    <a href="#" class="btn" target="_blank">Github Link</a>
+  </div>
+  <div class="image">IMAGE NEEDED</div>
+</section>
+
+<section class="section">
+  <div class="text">
+    <h2>URL to HTML</h2>
+    <p>url-to-html is a simple command-line tool that fetches HTML content from any website and optionally saves it to a file. It respects robots.txt to ensure responsible scraping.</p>
+    <a href="#" class="btn" target="_blank">Github Link</a>
+  </div>
+  <div class="image">IMAGE NEEDED</div>
+</section>
+
+<section class="section">
+  <div class="text">
+    <h2>Terminal Cheat Sheet</h2>
+    <p>A colorful terminal cheat sheet for Bash, CMD, and PowerShell commands.</p>
+    <a href="#" class="btn" target="_blank">Github Link</a>
+  </div>
+  <div class="image">IMAGE NEEDED</div>
+</section>
+
+
+
+<footer>
+  © 2026 Gdev45
+</footer>
+
+<script>
+  const sections = document.querySelectorAll('.section');
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.2 });
+
+  sections.forEach(section => observer.observe(section));
+</script>
+
+</body>
+</html>
